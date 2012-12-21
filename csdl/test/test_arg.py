@@ -1,5 +1,4 @@
 from csdl.arg import create_parser
-import sys
 
 def test_create_parser_01():
     args = ['Test']
@@ -14,7 +13,15 @@ def test_create_parser_02():
 
     parser = create_parser()
     try:
-        parsed_args = parser.parse_args(['Test', 'year'])
+        parsed_args = parser.parse_args(args)
         assert False
     except SystemExit:
         pass
+
+def test_create_parser_03():
+    args = ['Test', '2000']
+
+    parser = create_parser()
+    parsed_args = parser.parse_args(args)
+    assert parsed_args.conference_abbrev == 'Test'
+    assert parsed_args.year == 2000

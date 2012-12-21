@@ -10,4 +10,3 @@ def create_parser():
     parser.add_argument('year', nargs='?', type=int)
 
     return parser
-
