@@ -1,0 +1,29 @@
+#!/usr/bin/env python
+
+import os
+import sys
+import urllib2
+
+from lxml.html import fromstring
+
+if __name__ == "__main__":
+	base_url = 'http://www.computer.org/csdl/proceedings'
+
+	import argparse
+
+    	parser = argparse.ArgumentParser(description='Open IEEE CSDL')
+    	parser.add_argument('conference_abbrev',
+    	        help='path of repository dir')
+	parser.add_argument('year'
+			   nargs='?')
+	#print parser
+	print sys.argv
+	print len(sys.argv)
+    	args = parser.parse_args()
+	print args
+	#url = "/".join([base_url, args.conference_abbrev, args.year, 'index.html'])
+	#content = urllib2.urlopen(url).read()
+	#doc = fromstring(content)
+	#doc
+	#print url
+	#os.system('open %s' %(url))
